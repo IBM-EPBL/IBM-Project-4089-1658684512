@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Phishing Detection</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/styles.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename = 'images/phishing.ico') }}">
+    </head>
+
+    <body>
+        <div id="first">
+            <div class="navbar">
+                <img src="{{ url_for('static', filename = 'images/logo3.png') }}" alt="logo" class="logo">
+                <div class="user">
+                    <button type="button">About</button>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename ='images/bg1.jpg') }}" class="background_img" alt="">
+            <div class="container">
+                <form action="{{ url_for('y_predict')}}" method="post">
+                    <div class="info">
+                        <h1>Web Phishing Detection</h1>
+                        <br>
+                        <p>Phishing is an attempt to grab sensitive information and identity, such as credit card
+                            details (while doing online
+                            transactions or e-marketing- indirectly money), username, and password (while using a
+                            personal email account or other
+                            social networking sites)</p>
+                        <br><br>
+                        <input type="text" name="URL" placeholder="Enter the URL">
+                    </div>
+                </form>
+            </div>
+            <div class="resultContainer">
+                <h1 class="glitch">{{ prediction_text }}</h1>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
